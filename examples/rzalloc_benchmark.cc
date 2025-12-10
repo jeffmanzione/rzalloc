@@ -50,7 +50,10 @@ static void BM_Malloc_LongLived(benchmark::State& state) {
   }
 
   // Cleanup after benchmark ends
-  for (void* p : objects) std::free(p);
+  for (void* p : objects) {
+    benchmark::DoNotOptimize(p);
+    std::free(p);
+  }
 }
 
 template <size_t N>
@@ -123,7 +126,10 @@ static void BatchMalloc_LongLived(benchmark::State& state) {
     }
   }
 
-  for (void* p : objects) std::free(p);
+  for (void* p : objects) {
+    benchmark::DoNotOptimize(p);
+    std::free(p);
+  }
 }
 
 static void BatchRzalloc_LongLived(benchmark::State& state) {

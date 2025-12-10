@@ -2,7 +2,7 @@ Here is a **clean, polished, production-quality README.md** for a GitHub project
 
 ---
 
-# `rzalloc` — Fast Region-Based Memory Allocation for C
+# `rzalloc`
 
 `rzalloc` is a lightweight, high-performance C library that implements **zone/region-based memory allocation**. It provides extremely fast, fixed-size object allocation using:
 
@@ -21,7 +21,7 @@ Here is a **clean, polished, production-quality README.md** for a GitHub project
 * Parsers
 * Short-lived jobs or batch tasks
 
-It offers malloc-level convenience with *order-of-magnitude* performance gains.
+It offers malloc-level convenience with significant performance gains.
 
 ---
 

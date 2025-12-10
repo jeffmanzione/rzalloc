@@ -21,7 +21,7 @@
 #define SIZE_WITH_OFFSET(type) ALIGN_UP(sizeof(type))
 
 // Number of objects each region can hold before allocating another region.
-#define DEFAULT_OBJECTS_PER_REGION 128
+#define DEFAULT_OBJECTS_PER_REGION 512
 
 //
 // Per-object metadata stored directly before the user’s allocation.
