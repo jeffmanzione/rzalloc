@@ -1,8 +1,5 @@
-Here is a **clean, polished, production-quality README.md** for a GitHub project implementing region/zone-based allocation (`rzalloc`). It includes feature overview, examples, implementation details, diagrams, benchmarks, and integration notes—similar in style to high-quality C library READMEs.
 
----
-
-# `rzalloc`
+# `rzalloc` — Fast Region-Based Memory Allocation for C
 
 `rzalloc` is a lightweight, high-performance C library that implements **zone/region-based memory allocation**. It provides extremely fast, fixed-size object allocation using:
 
