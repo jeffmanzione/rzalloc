@@ -163,7 +163,7 @@ Benchmarks use **Google Benchmark** (see `rzalloc_benchmark.cc`).
 
 ### Expected Results
 
-~50% speedup
+50% to 1000% speedup depending on use-case
 
 **Exact results depend on your machine.**
 
