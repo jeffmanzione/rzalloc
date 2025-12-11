@@ -1,6 +1,5 @@
 #include "rzalloc/rzalloc.h"
 
-#include <stdalign.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -12,12 +11,26 @@
 //   Round up to the natural alignment required for max_align_t.
 //   This guarantees that any type can be safely stored.
 //
+#define ALIGN(n, a) (((n) + ((a)-1)) & ~((a)-1))
+// If C11 or later
+#if (__STDC_VERSION__ >= 201112L)
+#include <stdalign.h>
+#define ALIGN_UP(n) ALIGN((n), alignof(max_align_t))
+#else
+// Pre-C11 fallback: approximate max_align_t
+typedef struct {
+  long long ll;
+  long double ld;
+  void *p;
+} max_align_emulation_t;
+#define ALIGN_UP(n) ALIGN((n), sizeof(max_align_emulation_t))
+#endif
+
+//
 // SIZE_WITH_OFFSET(T)
 //   Size of T, rounded up so that the next object following T will also
 //   be correctly aligned.
 //
-#define ALIGN(n, a) (((n) + (a - 1)) & ~(a - 1))
-#define ALIGN_UP(n) ALIGN(n, alignof(max_align_t))
 #define SIZE_WITH_OFFSET(type) ALIGN_UP(sizeof(type))
 
 // Number of objects each region can hold before allocating another region.
