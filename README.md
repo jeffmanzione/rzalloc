@@ -101,7 +101,7 @@ int main() {
 Add to your MODULE.bazel:
 
 ```
-bazel_dep(name = "jeffmanzione_rzalloc", version = "1.0.0")
+bazel_dep(name = "jeffmanzione_rzalloc", version = "1.0.1")
 ```
 
 ---
